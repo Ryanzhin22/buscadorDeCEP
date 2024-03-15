@@ -17,7 +17,6 @@ function App() {
     if(input === ""){
       alert("Preenchar o CEP!")
       return
-      
     }
 
     try{
@@ -44,9 +43,15 @@ function App() {
         {cep && (
           <main>
             <h2>CEP: {cep.cep}</h2>
-            <span>Rua: {cep.logradouro}</span>
-            <span>Complemento: {cep.complemento}</span>
-            <span>Bairro: {cep.bairro}</span>
+            {cep.logradouro && (
+              <span>Rua: {cep.logradouro}</span>
+            )}
+            {cep.complemento && (
+              <span>Complemento: {cep.complemento}</span>
+            )}
+            {cep.bairro && (
+              <span>Bairro: {cep.bairro}</span>
+            )}
             <span>Cidade: {cep.localidade}</span>
           </main>
         )}
